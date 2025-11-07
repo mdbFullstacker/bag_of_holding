@@ -1,6 +1,9 @@
+import 'package:bag_of_holding/views/asyncOefening.dart';
+import 'package:bag_of_holding/views/voertuigenVergelijker.dart';
 import 'package:flutter/material.dart';
 import 'views/signup.dart';
 import 'views/profile.dart';
+import 'views/voertuigenVergelijker.dart';
 
 void main() {
   runApp(const BagOfHolding());
@@ -37,6 +40,26 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         centerTitle: true,
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => voertuigen()),
+              );
+            },
+            icon: const Icon(Icons.directions_car_filled_rounded),
+            tooltip: 'Voertuigen vergelijker',
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => asyncOefening()),
+              );
+            },
+            icon: const Icon(Icons.http_rounded),
+            tooltip: 'async oefening',
+          ),
           IconButton(
             onPressed: () {
               Navigator.push(
